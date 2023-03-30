@@ -4,11 +4,12 @@ export function handle(state, action) {
     state.author = action.caller;
   }
   if (
-    action.input.function === "createResume" &&
-    action.caller === state.author
+    action.input.function === "createResume"
   ) {
     const resumes = state.resumes;
+    console.log("resumes from contract.js: ", state);
     const userResume = resumes[action.caller];
+    console.log("userResume from contract.js: ", userResume);
     userResume[action.input.resume.id] = action.input.resume;
     resumes[action.caller] = userResume;
     state.resumes = resumes;

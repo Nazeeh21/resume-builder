@@ -11,7 +11,9 @@
 # next.js
 /.next/
 /out/
-
+/testwallet.json
+/transactionId.js
+/warp/cache/*
 # production
 /build
 
