@@ -9,6 +9,7 @@ async function createResume() {
   await contract.writeInteraction({
     function: "createResume",
     resume: {
+      id: uuid(),
       name: "Miral",
       address: "katargam",
       city: "Surat",

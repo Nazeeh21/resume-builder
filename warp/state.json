@@ -1,23 +1,6 @@
 {
   "resumes": {
-    "user-address": {
-      "1": {
-        "name": "John Doe",
-        "address": "123 Main St",
-        "city": "Anytown",
-        "state": "CA",
-        "zip": "12345"
-      }
-    },
-    "user-address-2": {
-      "2": {
-        "school": "University of California",
-        "degree": "B.S.",
-        "major": "Computer Science",
-        "minor": "Mathematics",
-        "graduation": "May 2010"
-      }
-    }
+    
   },
   "owner": null
 }

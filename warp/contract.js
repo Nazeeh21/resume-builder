@@ -3,12 +3,12 @@ export function handle(state, action) {
   if (action.input.function === "initialize") {
     state.author = action.caller;
   }
-  if (
-    action.input.function === "createResume"
-  ) {
+  if (action.input.function === "createResume") {
     const resumes = state.resumes;
-    console.log("resumes from contract.js: ", state);
-    const userResume = resumes[action.caller];
+    
+    ContractAssert(action.caller, "Caller is underfined");
+
+    const userResume = resumes[action.caller] || {};
     console.log("userResume from contract.js: ", userResume);
     userResume[action.input.resume.id] = action.input.resume;
     resumes[action.caller] = userResume;
