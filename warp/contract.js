@@ -3,7 +3,10 @@ export function handle(state, action) {
   if (action.input.function === "initialize") {
     state.author = action.caller;
   }
-  if (action.input.function === "createResume") {
+  if (
+    action.input.function === "createResume" &&
+    action.caller === state.author
+  ) {
     const resumes = state.resumes;
     const userResume = resumes[action.caller];
     userResume[action.input.resume.id] = action.input.resume;
