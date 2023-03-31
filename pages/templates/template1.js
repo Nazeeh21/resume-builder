@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
-import { getContract } from "../configureWarpClient";
+import { getContract } from "../../configureWarpClient";
 
-const CreateResume = () => {
+const Template1 = () => {
   const [resume, setResume] = useState({
     name: "",
     workExp: "",
@@ -26,54 +26,20 @@ const CreateResume = () => {
     }
   };
   return (
-    <div>
-      <h1>Create Resume</h1>
+    <div className="min-h-screen">
       <input
         value={resume.name}
         placeholder="Your name"
         onChange={(e) => setResume({ ...resume, name: e.target.value })}
-        style={inputStyle}
       />
       <textarea
         value={resume.workExp}
         placeholder="Work Exp"
         onChange={(e) => setResume({ ...resume, workExp: e.target.value })}
-        style={textAreaStyle}
       />
-      <button style={buttonStyle} onClick={createResume}>
-        Create Resume
-      </button>
+      <button onClick={createResume}>Create Resume</button>
     </div>
   );
 };
 
-const formContainerStyle = {
-  width: "900px",
-  margin: "0 auto",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "flex-start",
-};
-
-const inputStyle = {
-  width: "300px",
-  padding: "8px",
-  fontSize: "18px",
-  border: "none",
-  outline: "none",
-  marginBottom: "20px",
-};
-
-const buttonStyle = {
-  width: "200px",
-  padding: "10px 0px",
-};
-
-const textAreaStyle = {
-  width: "100%",
-  height: "300px",
-  marginBottom: "20px",
-  padding: "20px",
-};
-
-export default CreateResume;
+export default Template1;
